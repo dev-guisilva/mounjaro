@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monjaro Caseiro - Perca +10Kg em pouco tempo!</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<button id="btn-voltar" aria-label="Voltar à página anterior">
+</button>
+<style>
+    #btn-voltar {
+        position: fixed;
+        /* fixa na tela */
+        top: 20px;
+        /* distância do topo */
+        left: 20px;
+        /* distância da esquerda */
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        font-size: 30px;
+        color: #ffffff;
+        user-select: none;
+    }
+
+    #btn-voltar::before {
+        content: '←';
+        /* seta simples */
+        display: block;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    #btn-voltar:hover {
+        color: #ffffff;
+    }
+</style>
+
+<script>
+    document.getElementById('btn-voltar').addEventListener('click', () => {
+    });
+</script>
+
+<body>
+    <main id="quiz-container">
+
+        <!-- Barra de progresso -->
+        <div id="progress-container" aria-label="Barra de progresso do quiz" role="progressbar" aria-valuemin="0"
+            aria-valuemax="100" aria-valuenow="0">
+            <div id="progress-bar"></div>
+        </div>
+        <!-- ... resto do quiz ... -->
+
+        <!-- Pergunta 1 -->
+        <section class="quiz-page" data-page="1">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Quantos kilos você deseja perder?</h1>
+            <form id="form-1">
+                <label><input type="radio" name="answer" value="Até 5Kg" required> Até 5kg</label><br />
+                <label><input type="radio" name="answer" value="De 6 a 10Kg"> De 6 a 10Kg</label><br />
+                <label><input type="radio" name="answer" value="De 11 a 20Kg"> De 11 a 15Kg</label><br />
+                <label><input type="radio" name="answer" value="De 16 a 20Kg"> De 16 a 20Kg</label><br />
+                <label><input type="radio" name="answer" value="Mais de 20kg"> Mais de 20kg</label><br />
+                <button type="submit">Próxima</button>
+            </form>
+        </section>
+
+        <!-- Pergunta 2 -->
+        <section class="quiz-page" data-page="2" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Como você classificaria seu corpo hoje?</h1>
+            <form id="form-2">
+                <label><input type="radio" name="answer" value="Regular" required> Regular</label><br />
+                <label><input type="radio" name="answer" value="Flácido"> Flácido</label><br />
+                <label><input type="radio" name="answer" value="Sobrepeso"> Sobrepeso</label><br />
+                <button type="submit">Próxima</button>
+            </form>
+        </section>
+
+        <!-- Pergunta 3 -->
+        <section class="quiz-page" data-page="3" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Em qual área do seu corpo você gostaria de reduzir mais gordura?</h1>
+            <form id="form-3">
+                <label><input type="checkbox" name="answer" value="Região dos Culotes"> Região dos
+                    Culotes</label><br />
+                <label><input type="checkbox" name="answer" value="Região das coxas"> Região das coxas</label><br />
+                <label><input type="checkbox" name="answer" value="Região do Abdômen (barriga)"> Região do Abdômen
+                    (barriga)</label><br />
+                <label><input type="checkbox" name="answer" value="Região dos Glúteos"> Região dos Glúteos</label><br />
+                <label><input type="checkbox" name="answer" value="Região dos Braços"> Região dos Braços</label><br />
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <!-- Pergunta 4 -->
+        <section class="quiz-page" data-page="4" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Qual seu nome?</h1>
+            <form id="form-4" onsubmit="nextPage(event);">
+                <label>
+                    <input type="text" name="answer" placeholder="Digite seu nome" required>
+                </label>
+                <br>
+                <h4>Não se preocupe, seus dados estão protegidos por criptografia de ponta a ponta.</h4>
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <!-- Pergunta 5 -->
+        <section class="quiz-page" data-page="5" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Como o seu peso impacta a sua vida?</h1>
+            <form id="form-5">
+                <label><input type="checkbox" name="answer" value="Camera"> Evito tirar fotos porque tenho
+                    vergonha</label><br />
+                <label><input type="checkbox" name="answer" value="Coração"> Meu parceiro não me olha mais com desejo
+                    como
+                    antes</label><br />
+                <label><input type="checkbox" name="answer" value="Carinha triste"> Evito encontro sociais porque não me
+                    sinto bem comigo mesma</label><br />
+                <label><input type="radio" name="answer" value="Mão">Outro / Prefiro não informar</label><br />
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <!-- Pergunta 6 -->
+        <section class="quiz-page" data-page="6" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Você está realmente feliz com a sua aparência?</h1>
+            <form id="form-6">
+                <label><input type="radio" name="answer" value="Choro"> Não, porque me sinto acima do
+                    peso</label><br />
+                <label><input type="radio" name="answer" value="Coração"> Sim, mas sei que posso melhorar minha
+                    saúde</label><br />
+                <label><input type="radio" name="answer" value="Triste"> Não, gostaria de perder peso para melhorar meu
+                    bem estar</label><br />
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <!-- Pergunta 7 -->
+        <section class="quiz-page" data-page="7" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>O que mais te impede de emagrecer?</h1>
+            <form id="form-7">
+                <label><input type="checkbox" name="answer" value="relogio"> Falta de Tempo - Rotina
+                    Agitada</label><br />
+                <label><input type="checkbox" name="answer" value="Dificil"> Dificuldade em resistir a tentações
+                    alimentares</label><br />
+                <label><input type="checkbox" name="answer" value="Financeiro"> Preço de alimentos saudáveis mais caros
+                    do
+                    que alimentos processados</label><br />
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <!-- Pergunta 8 -->
+        <section class="quiz-page" data-page="8" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Quais desses benefícios você gostaria de ter?</h1>
+            <form id="form-8">
+                <label><input type="checkbox" name="answer" value="emagrecer"> Emagrecer sem esforço e sem efeito
+                    sanfona</label><br />
+                <label><input type="checkbox" name="answer" value="sono"> Sono mais profundo</label><br />
+                <label><input type="checkbox" name="answer" value="energia"> Mais energia e disposição</label><br />
+                <label><input type="checkbox" name="answer" value="autoestima"> Aumento da autoestima e
+                    confiança</label><br />
+                <label><input type="checkbox" name="answer" value="estresse"> Redução do estresse e
+                    ansiedade</label><br />
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <!-- Pergunta 9 -->
+        <section class="quiz-page" data-page="9" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <form id="form-9">
+                <div class="container">
+                    <h1 class="title">Qual é o seu peso atual?</h1>
+                    <p class="subtitle">Estamos quase lá! Vamos ajustar seu plano de acordo com seu corpo.</p>
+
+                    <div class="weight-slider">
+                        <input type="range" min="50" max="150" value="70" id="weightRange" name="answer">
+                        <div class="weight-display">
+                            <span id="weightValue">70</span> kg
+                        </div>
+                    </div>
+
+                    <p class="info">Arraste para ajustar.</p>
+                    <p class="note">Baseado nisso, ajustaremos a dosagem ideal para os melhores resultados!</p>
+
+                    <button type="submit">Continuar</button>
+                </div>
+            </form>
+        </section>
+
+
+        <!-- Pergunta 10 -->
+        <section class="quiz-page" data-page="10" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <form id="form-10">
+                <div class="container">
+                    <h1 class="title">Qual é a sua altura?</h1>
+                    <p class="subtitle">Estamos quase lá! Vamos ajustar seu plano de acordo com seu corpo.</p>
+
+                    <div class="height-slider">
+                        <input type="range" min="140" max="210" value="170" id="heightRange" name="answer" required>
+                        <div class="height-display">
+                            <span id="heightValue">170</span> cm
+                        </div>
+                    </div>
+
+                    <p class="info">Arraste para ajustar.</p>
+                    <p class="note">Com base nisso, vamos adaptar ainda melhor a sua jornada de emagrecimento!</p>
+
+                    <button type="submit">Continuar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Pergunta 11 -->
+        <section class="quiz-page" data-page="11" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <form id="form-11">
+                <div class="container">
+                    <h1 class="title">Qual é o seu peso desejado?</h1>
+
+                    <p class="subtitle">Isso nos ajudará a personalizar um plano especificamente para você.</p>
+
+                    <div class="weight-slider">
+                        <input type="range" min="50" max="150" value="70" id="weightRange11" name="answer">
+                        <div class="weight-display">
+                            <span id="weightValue11">70</span> kg
+                        </div>
+                    </div>
+
+                    <p class="info">Arraste para ajustar.</p>
+                    <p class="note">Baseado nisso, ajustaremos a dosagem ideal para os melhores resultados!</p>
+
+                    <button type="submit">Continuar</button>
+                </div>
+            </form>
+        </section>
+
+        <!--Pergunta 12-->
+        <section class="quiz-page" data-page="12" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Como é seu dia a dia?</h1>
+            <form id="form-12">
+                <label><input type="radio" name="answer" value="trabalho fora" required> Trabalho fora e tenho uma
+                    rotina agitada</label><br />
+                <label><input type="radio" name="answer" value="trabalho em casa"> Trabalho em casa e tenho uma rotina
+                    flexível</label><br />
+                <label><input type="radio" name="answer" value="casa e familia"> Fico em casa cuidando da
+                    família</label><br />
+                <label><input type="radio" name="answer" value="outro"> Outro</label><br />
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <!--Pergunta 13-->
+        <section class="quiz-page" data-page="13" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Quantas horas de sono você tem por noite?</h1>
+            <form id="form-13">
+                <label><input type="radio" name="answer" value="-5" required> Menos de 5 horas por dia</label><br />
+                <label><input type="radio" name="answer" value="5-7"> Entre 5 e 7 horas por dia</label><br />
+                <label><input type="radio" name="answer" value="7-9"> Entre 7 e 9 horas por dia</label><br />
+                <label><input type="radio" name="answer" value="+9"> Mais de 9 horas por dia</label><br />
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <!--Pergunta 14-->
+        <section class="quiz-page" data-page="14" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <h1>Como é sua hidratação diária?</h1>
+            <form id="form-14">
+                <label><input type="radio" name="answer" value="teacoffe" required> Bebo apenas chá ou
+                    café</label><br />
+                <label><input type="radio" name="answer" value="1-2"> 1-2 copos por dia</label><br />
+                <label><input type="radio" name="answer" value="2-6"> 2-6 copos por dia</label><br />
+                <label><input type="radio" name="answer" value="+6"> Mais de 6 copos por dia</label><br />
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+
+        <section class="quiz-page" data-page="15" style="display: none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <form id="form-15">
+                <hr class="linha-verde" />
+
+                <h3 class="pre-titulo">Nosso protocolo</h3>
+                <h2 class="titulo-destaque">Resolve isso para você!</h2>
+
+                <h1 class="titulo-principal">COMO FUNCIONA O<br>MOUNJARO DE POBRE</h1>
+
+                <img src="assets/Capturar.PNG" alt="Como funciona" class="fluxo-img">
+
+                <p class="texto-final">
+                    <strong style="color: green;">Mounjaro Caseiro</strong> age enquanto você
+                    <strong style="color: black;">dorme</strong>, <strong style="color: green;">queimando gordura de
+                        forma acelerada!</strong>
+                </p>
+
+                <!-- INPUT HIDDEN para funcionar como as outras páginas -->
+                <input type="hidden" name="answer" value="informativo">
+
+                <button type="submit" class="btn-continuar">Continuar</button>
+            </form>
+        </section>
+
+        <section class="quiz-page" data-page="16" style="display:none;">
+            <div style="text-align:center; color:#fff;">
+                <h1>Carregando...</h1>
+            </div>
+            <div id="progress-container-loading" style="width: 100%; max-width: 500px; margin: 20px auto;">
+                <div id="loading-bar"></div>
+            </div>
+        </section>
+
+        <section class="quiz-page" data-page="17" style="display:none;">
+            <img class="logoquiz" src="assets/Mounjaro de pobre.png" alt="">
+            <form id="form-17">
+                <h2>Seu IMC</h2>
+                <p id="imc-value" style="font-size: 1.5rem; font-weight: bold;">Calculando...</p>
+                <div style="width: 100%; max-width: 500px; margin: 20px auto;">
+                    <div style="width: 100%; background: #ddd; border-radius: 15px; overflow: hidden; height: 30px;">
+                        <div id="imc-progress-bar"
+                            style="height: 100%; width: 0; text-align: center; line-height: 30px; color: white; font-weight: bold; border-radius: 15px 0 0 15px; transition: width 1s ease;">
+                        </div>
+                    </div>
+                    <p id="imc-description" style="margin-top: 10px; font-size: 1.1rem;"></p>
+
+                    <h3>VEJA UM EXEMPLO DE EMAGRECIMENTO DA GABRIELA TIOSSI, CLIENTE DO NOSSO PRODUTO:</h3>
+                    <img class="expema"
+                        src="https://s3-sa-east-1.amazonaws.com/heroku-exercicioemcasa/wp-content/uploads/2023/07/04141336/ANTES_E_DEPOIS_DE_EMAGRECER_GABI_TIOSSI_1.jpg"
+                        alt="exemplo de emagrecimento">
+                </div>
+
+                <button type="submit" class="btn-continuar">Finalizar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
